@@ -1,8 +1,13 @@
-import React from "react";
+import React, { createContext } from "react";
 import { createRoot } from "react-dom/client"
 import App from "./components/App";
+import ColorProvider  from "./components/ColorProvider";
 
 const container = document.getElementById("root");
-console.log(`container ${container}`);
 const root = createRoot(container);
-root.render(<App />);
+
+root.render(
+    <ColorProvider>
+        <App />
+    </ColorProvider>
+);
